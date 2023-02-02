@@ -1,0 +1,52 @@
+import java.util.Scanner;
+public class ab {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter a number : ");
+        int n = sc.nextInt();
+        int temp = n;
+        int count =0;
+        while(n!=0)
+        {
+            
+            n=n/10;
+            
+            count++;
+        }
+      int intArray[];
+      intArray = new int[count];
+      
+           
+        for(int i=0; i<count; i++)
+        {
+            
+            
+            intArray[i]=temp%10;
+            temp=temp/10;
+        }
+       
+       for(int i=0; i<count; i++)
+       {
+           for(int j=1; j<=intArray[i]; j++)
+           {
+               intArray[i]=intArray[i]*i;
+           }
+       }
+       
+       int sum=0;
+       for(int i=0; i<count; i++)
+       {
+           sum+=intArray[i];
+          
+       }
+       if(sum==n)
+       {
+           System.out.println("Number is strong");
+       }
+       else
+       {
+           System.out.println("Number is not Strong");
+       }
+      
+    }
+}
